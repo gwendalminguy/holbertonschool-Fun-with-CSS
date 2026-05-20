@@ -1,0 +1,87 @@
+/* Center Toggle */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Hide Native Checkbox */
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+/* Main Container */
+.toggle-label {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 34px;
+    cursor: pointer;
+}
+
+/* Background */
+.toggle-inner {
+    width: 100%;
+    height: 100%;
+    background: grey;
+    border: 3px solid lightgrey;
+    border-radius: 999px;
+    transition: background 0.3s;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding-right: 12px;
+    box-sizing: border-box;
+
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+/* Inactive Text */
+.toggle-inner::after {
+    content: "NO";
+}
+
+/* Button */
+.toggle-switch {
+    position: absolute;
+    top: -3px;
+    left: -8px;
+
+    width: 40px;
+    height: 40px;
+
+    background: white;
+    border: 3px solid lightgrey;
+    border-radius: 50%;
+
+    transition: transform 0.3s;
+    box-sizing: border-box;
+}
+
+/* Active State */
+.toggle-cb:checked + .toggle-label .toggle-inner {
+    background: #e53935;
+
+    justify-content: flex-start;
+    padding-left: 12px;
+    padding-right: 0;
+}
+
+/* Active Text */
+.toggle-cb:checked + .toggle-label .toggle-inner::after {
+    content: "YES";
+}
+
+/* Move Button */
+.toggle-cb:checked + .toggle-label .toggle-switch {
+    transform: translateX(72px);
+}
