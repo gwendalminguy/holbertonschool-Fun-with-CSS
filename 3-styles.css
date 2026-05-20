@@ -1,0 +1,151 @@
+/* Center Burger */
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+}
+
+/* Container */
+.menu {
+    position: relative;
+}
+
+/* Hide Checkbox */
+.menu-open {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;      
+}
+
+/* Main Burger Button */
+.menu-open-button {
+    width: 70px;
+    height: 70px;
+
+    background: #e53935;
+    border-radius: 50%;
+    outline: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    cursor: pointer;
+
+    position: relative;
+    z-index: 10;
+
+    transition: transform 0.3s;
+}
+
+/* Burger lines */
+.menu-line {
+    width: 30px;
+    height: 4px;
+
+    background: white;
+    border-radius: 999px;
+
+    transition: all 0.3s;
+}
+
+/* Menu Items */
+.menu-item {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 70px;
+    height: 70px;
+
+    background: #e53935;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.4s,
+        opacity 0.3s;
+
+    opacity: 0;
+}
+
+/* Icon Size */
+.menu-item i {
+    font-size: 24px;
+}
+
+.menu-item:focus-visible {
+    background: white;
+    color: #e53935;
+}
+
+/* OPEN STATE */
+
+.menu-open:focus-visible + .menu-open-button {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+/* Rotate Burger */
+.menu-open:checked + .menu-open-button {
+    transform: rotate(180deg);
+}
+
+/* Transform Lines > X */
+.menu-open:checked + .menu-open-button .menu-line-1 {
+    transform:
+        translateY(10px)
+        rotate(45deg);
+}
+
+.menu-open:checked + .menu-open-button .menu-line-2 {
+    opacity: 0;
+}
+
+.menu-open:checked + .menu-open-button .menu-line-3 {
+    transform:
+        translateY(-10px)
+        rotate(-45deg);
+}
+
+/* Show Menu Items */
+.menu-open:checked ~ .menu-item {
+    opacity: 1;
+}
+
+/* Individual Positions */
+.menu-open:checked ~ .menu-item:nth-of-type(2) {
+    transform: translateY(90px);
+}
+
+.menu-open:checked ~ .menu-item:nth-of-type(3) {
+    transform: translateY(180px);
+}
+
+.menu-open:checked ~ .menu-item:nth-of-type(4) {
+    transform: translateY(270px);
+}
+
+.menu-open:checked ~ .menu-item:nth-of-type(5) {
+    transform: translateY(360px);
+}
+
+.menu-open:checked ~ .menu-item:nth-of-type(6) {
+    transform: translateY(450px);
+}
