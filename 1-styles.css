@@ -1,13 +1,33 @@
+/* Center Text */
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+}
+
+/* Text Size */
+h2 {
+    font-size: 32px;
+}
+
+/* Link & Transition */
 a {
     background: linear-gradient(currentColor 0 0) 
       bottom left/
       var(--underline-width, 0%) 0.1em
       no-repeat;
+    color: #e53935;
     display: inline-block;
     text-decoration: none;
     transition: background-size 0.5s;
 }
 
+/* Activate Underline */
 a:hover {
   --underline-width: 100%;
 }
