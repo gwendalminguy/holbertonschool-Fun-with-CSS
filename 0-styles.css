@@ -1,3 +1,15 @@
+/* Center Sprite */
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+}
+
 ul {
     position: relative;
     display: flex;
@@ -27,14 +39,17 @@ li span {
     border-radius: 15px;
 }
 
+/* Sprite (HTML) */
 li .i-html {
     background: url('0-sprite.png') 0 0;
 }
 
+/* Sprite (CSS) */
 li .i-css {
     background: url('0-sprite.png') 275px 0;
 }
 
+/* Sprite (JS) */
 li .i-js {
     background: url('0-sprite.png') 570px 0;
 }
